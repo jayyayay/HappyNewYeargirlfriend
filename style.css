@@ -186,7 +186,7 @@ span {
 .btntext {
   position: absolute;
   top: 250px;
-  background-color: #ffffff;
+  background-color: #fefcf7;
   font-family: poppins;
   font-weight: 500;
   font-size: 15px;
@@ -199,6 +199,7 @@ span {
     font-family: poppins;
     font-weight: 500;
     font-size: 15px;
+
 }
 
 .popup{
@@ -313,18 +314,14 @@ span {
   }
   .boxx{
     top: 70px;
-    opacity: 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    animation: transInbutt 2s forwards;
-    animation-delay: 8s; 
+    text-align: center; 
 }
   .buttoncon{
-    opacity: 0;
     position: relative;
     top: 280px;
     background-color: #ffffff;
@@ -333,23 +330,22 @@ span {
     width: 140px;
     height: 32px;
     border-radius: 40px;
-    box-shadow: 0 0 20px white;
-    animation: transInbutt 2s forwards;
-    animation-delay: 8s;    
+    box-shadow: 0 0 20px white;  
 }
+
 .btntextcon,
 .a{
-  opacity: 0;
     position: relative;
     top: 4px;
     color: #000000;
     font-family: poppins;
     font-weight: 500;
     font-size: 15px;
-    animation: transInbutt 2s forwards;
-    animation-delay: 8s; 
+    text-decoration: none;
 }
-
+.btntextcon{
+  margin-top: 10px;
+}
 *,
 *:before,
 *:after{
@@ -364,8 +360,8 @@ span {
     margin: auto;
     left: 0;
     right: 25px;
-    top: -150px;
-    bottom: 150px;
+    top: -200px;
+    bottom: 200px;
 }
 .loader div:nth-child(1){
     background-color: #dd1c4b;
@@ -418,4 +414,70 @@ span {
     75%{
         transform: rotate(135deg);
     }
+}
+.pengisi{
+  height: 250px;
+}
+.game-container {
+  
+  font-family: poppins;
+  font-weight: 500;
+  margin-top: 100px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #00082b;
+  size: 20px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  margin: 10px 0;
+  width: 60%;
+  font-size: 16px;
+}
+
+.btnangka  {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #dd1c4b;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btnangka :hover {
+  background-color: #45a049;
+}
+
+#messageang {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#attempts {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#restartBtn {
+  background-color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  width: 140px;
+  height: 32px;
+  border-radius: 40px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.551);  
+}
+
+#restartBtn:hover {
+  background-color: #e6e6e6;
 }

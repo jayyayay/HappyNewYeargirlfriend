@@ -15,7 +15,6 @@
                </style>
   </head>
   <body>
-
     <div class="container">
         
       <div class="fireworks"></div>
@@ -38,7 +37,7 @@
         <span aria-hidden="true">H</span>
     </div>
         <div class="box">
-            <button id="btn" disabled="" type="button" class="btntext" onclick="openPopup()">Please Wait</button>
+            <button id="btn" disabled="" type="button" class="btntext" onclick="openPopup()">Tunggu yaaa</button>
           </div>
      
       <div class="ctd">
@@ -62,11 +61,21 @@
         <div></div>
         <div></div>
     </div>
-    <div class="boxx">
-    <nav class="buttoncon">
-        <a href="message.html" class="btntextcon">Continue</a>
-        <span class="a"></span>
-      </nav>
+    <div class="pengisi"></div>
+    <div class="game-container">
+        <h1>Guess The Number!!</h1>
+        <p>Insert between 1-100</p>
+        
+        <label for="guess" style="display: none;">Masukkan Tebakan:</label>
+        <input type="number" id="guess" min="1" max="100">
+        <button class="btnangka" id="submitGuess">Tebak!</button>
+        
+        <div id="messageang"></div>
+        <div id="attempts" style="display: none;">0</div>
+        
+    
+    </div>
+    <a href="message.html" class="btntextcon" id="restartBtn" style="display: none;">Continue</a>
     </div>
 </div>
 </div>
@@ -76,7 +85,7 @@
     function openPopup(){
     popup.classList.add("open-popup");
 }
-        var target_mili_sec = new Date("Dec 30, 2024 13:33:00");
+        var target_mili_sec = new Date("Dec 30, 2024 22:00:00");
         var endTime = target_mili_sec.getTime();
         function timer() {
          var today = new Date();
@@ -113,14 +122,14 @@
             document.getElementById('btn').innerHTML = "Please Wait";
         }
         else{
-            var target_mili_sec = new Date("Dec 30, 2024 13:33:00");
+            var target_mili_sec = new Date("Dec 30, 2024 22:00:00");
         function timerBTN() {
             var now_mili_secBTN = new Date().getTime();
             var remaining_secBTN = Math.floor( (target_mili_sec - now_mili_secBTN) / 1000 );
         
         var timerr = Math.floor(remaining_secBTN % 60);
         var mytimerr = setInterval(function(){
-            document.getElementById('btn').innerHTML = "Please Wait "+timerr--+" sec";
+            document.getElementById('btn').innerHTML = "Tinggal "+timerr--+" detik nihh";
             if (timerr < -1){
                 clearInterval(mytimerr);
                 document.getElementById('btn').innerHTML = "Open Message";
@@ -129,6 +138,67 @@
         }, 1000);
     }setInterval(timerBTN, 1000);
         }
+
+        let correctNumber = Math.floor(Math.random() * 100) + 1; // Angka acak antara 1 hingga 100
+let attempts = 0; // Jumlah percakapan
+let gameOver = false;
+
+// Mengambil elemen dari HTML
+const guessInput = document.getElementById('guess');
+const submitBtn = document.getElementById('submitGuess');
+const messageDiv = document.getElementById('messageang');
+const attemptsDiv = document.getElementById('attempts');
+const restartBtn = document.getElementById('restartBtn');
+
+// Fungsi untuk menangani tebakan pemain
+function handleGuess() {
+    const userGuess = parseInt(guessInput.value);
+    
+    // Pastikan input valid
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+        messageDiv.innerHTML = "Tebakan harus antara 1 dan 100.";
+        return;
+    }
+    
+    attempts++; // Tambahkan jumlah percakapan
+    attemptsDiv.innerHTML = `Jumlah tebakan: ${attempts}`;
+    
+    if (userGuess === correctNumber) {
+        messageDiv.innerHTML = `Yeayyy benerrrr jawabannya  ${correctNumber}.`;
+        messageDiv.style.color = 'green';
+        gameOver = true;
+        submitBtn.disabled = true;
+        restartBtn.style.display = 'inline-block';
+    } else if (userGuess < correctNumber) {
+        messageDiv.innerHTML = "Terlalu kecill, coba lagi dehh";
+        messageDiv.style.color = 'red';
+    } else {
+        messageDiv.innerHTML = "Terlalu besarr, coba lagi yaaa";
+        messageDiv.style.color = 'red';
+    }
+}
+
+// Fungsi untuk memulai ulang permainan
+function restartGame() {
+    correctNumber = Math.floor(Math.random() * 100) + 1;
+    attempts = 0;
+    gameOver = false;
+    submitBtn.disabled = false;
+    restartBtn.style.display = 'none';
+    messageDiv.innerHTML = '';
+    attemptsDiv.innerHTML = `Jumlah tebakan: 0`;
+    guessInput.value = '';
+}
+
+// Event listener untuk tombol submit
+submitBtn.addEventListener('click', function() {
+    if (!gameOver) {
+        handleGuess();
+    }
+});
+
+// Event listener untuk tombol restart
+restartBtn.addEventListener('click', restartGame);
     </script>
   </body>
 </html>

@@ -145,7 +145,7 @@ height: auto;
     }
     100% {
         z-index: 5;
-        height: 2000px;
+        height: 1980px;
         width: 1100px;
         transform: translateY(-1400px);
     }
