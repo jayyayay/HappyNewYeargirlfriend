@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy New Year</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+               </style>
+  </head>
+  <body>
+
+    <div class="container">
+        
+      <div class="fireworks"></div>
+      <div class="fireworks2"></div>
+      <div class="fireworks3"></div>
+      <div class="fireworks4"></div>
+      <div class="fireworks5"></div>
+      <div class="fireworks6"></div>
+      <div class="fireworks7"></div>
+      <div class="fireworks8"></div>
+      <div class="fireworks9"></div>
+      <div class="fireworks10"></div>
+      <div class="txt">
+        <h1 class="text" >
+            Happy New Year
+        </h1>
+        <h1 class="text" data-flicker="H" contenteditable>
+            Hillary
+        </h1>
+        <span aria-hidden="true">H</span>
+    </div>
+        <div class="box">
+            <button id="btn" disabled="" type="button" class="btntext" onclick="openPopup()">Please Wait</button>
+          </div>
+     
+      <div class="ctd">
+        <div class="timer">
+            <div class="sub_timer">
+                <h1 id="hour" class="digit">00</h1>
+                <p class="digit_name">Hours</p>
+            </div>
+            <div class="sub_timer">
+                <h1 id="min" class="digit">00</h1>
+                <p class="digit_name">Minutes</p>
+            </div>
+            <div class="sub_timer">
+                <h1 id="sec" class="digit">00</h1>
+                <p class="digit_name">Seconds</p>
+            </div>
+        </div>
+    </div>
+<div id="popup" class="popup">
+    <div class="loader">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="boxx">
+    <nav class="buttoncon">
+        <a href="message.html" class="btntextcon">Continue</a>
+        <span class="a"></span>
+      </nav>
+    </div>
+</div>
+</div>
+
+    <script>
+    let popup = document.getElementById("popup");
+    function openPopup(){
+    popup.classList.add("open-popup");
+}
+        var target_mili_sec = new Date("Dec 30, 2024 14:00:00");
+        var endTime = target_mili_sec.getTime();
+        function timer() {
+         var today = new Date();
+         var s = today.getSeconds();        
+        if (target_mili_sec < today){
+            clearInterval(i);
+            document.querySelector("#hour").innerHTML = "0";
+            document.querySelector("#min").innerHTML = "0";
+            document.querySelector("#sec").innerHTML = "0";
+        } 
+        else{            
+            var now_mili_sec = new Date();
+            var remaining_sec = Math.floor( (target_mili_sec - now_mili_sec) / 1000 );
+    
+            var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+            var min = Math.floor((remaining_sec % 3600) / 60);
+            var sec = Math.floor(remaining_sec % 60);
+    
+            document.querySelector("#hour").innerHTML = hour;
+            document.querySelector("#min").innerHTML = min;
+            document.querySelector("#sec").innerHTML = sec;
+        } 
+        }setInterval(timer, 1000);//1000 it means 1 sec
+    
+    const elts = {
+	text1: document.getElementById("text1"),
+	text2: document.getElementById("text2")
+};
+        var now_mili_secBTNM = new Date().getTime();
+        var remaining_secBTNM = Math.floor( (target_mili_sec - now_mili_secBTNM) / 1000 );      
+        var min = Math.floor((remaining_secBTNM % 3600) / 60);
+
+        if(min >= 1){
+            document.getElementById('btn').innerHTML = "Please Wait";
+        }
+        else{
+            var target_mili_sec = new Date("Dec 30, 2024 14:00:00");
+        function timerBTN() {
+            var now_mili_secBTN = new Date().getTime();
+            var remaining_secBTN = Math.floor( (target_mili_sec - now_mili_secBTN) / 1000 );
+        
+        var timerr = Math.floor(remaining_secBTN % 60);
+        var mytimerr = setInterval(function(){
+            document.getElementById('btn').innerHTML = "Please Wait "+timerr--+" sec";
+            if (timerr < -1){
+                clearInterval(mytimerr);
+                document.getElementById('btn').innerHTML = "Open Message";
+                document.getElementById('btn').disabled = false;
+            }
+        }, 1000);
+    }setInterval(timerBTN, 1000);
+        }
+    </script>
+  </body>
+</html>

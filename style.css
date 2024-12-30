@@ -1,0 +1,421 @@
+body {
+    margin: 0;
+  }
+  .container {
+    position: relative;
+    background-image: linear-gradient(black, rgb(8, 8, 70));
+    height: 100vh;
+    overflow: hidden;
+
+  }
+    
+  @keyframes fireworks {
+    0% {
+      transform: translateY(100vh);
+    }
+    50% {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+    75% {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+    100% {
+      width: 250px;
+      height: 350px;
+      opacity: 0;
+    }
+  }
+  .fireworks,
+  .fireworks2,
+  .fireworks3,
+  .fireworks4,
+  .fireworks5 
+  .fireworks6,
+  .fireworks7,
+  .fireworks8,
+  .fireworks9,
+  .fireworks10 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    background-image: radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+      radial-gradient(red, black), radial-gradient(rgb(255, 0, 149), black),
+      radial-gradient(rgb(153, 0, 255), black),
+      radial-gradient(rgb(255, 0, 149), black),
+      radial-gradient(rgb(255, 0, 170), black),
+      radial-gradient(rgb(0, 255, 170), black),
+      radial-gradient(rgb(153, 0, 255), black),
+      radial-gradient(rgb(255, 0, 149), black),
+      radial-gradient(rgb(0, 174, 255), black),
+      radial-gradient(rgb(0, 255, 170), black),
+      radial-gradient(rgb(153, 0, 255), black),
+      radial-gradient(rgb(0, 255, 170), black),
+      radial-gradient(rgb(153, 0, 255), black),
+      radial-gradient(rgb(255, 0, 149), black),
+      radial-gradient(rgb(200, 255, 0), black),
+      radial-gradient(rgb(0, 255, 170), black),
+      radial-gradient(rgb(0, 140, 255), black),
+      radial-gradient(rgb(255, 217, 0), black),
+      radial-gradient(rgb(0, 140, 255), black), radial-gradient(red, black),
+      radial-gradient(rgb(166, 255, 0), black),
+      radial-gradient(rgb(166, 255, 0), black),
+      radial-gradient(rgb(255, 0, 149), black);
+    background-position: 95% 30%, 50% 0%, 100% 10%, 20% 10%, 50% 50%, 30% 30%,
+      0% 50%, 80% 25%, 50% 30%, 80% 50%, 100% 60%, 80% 80%, 20% 85%, 0 25%,
+      55% 65%, 85% 0, 50% 100%, 70% 90%, 10% 70%, 70% 70%, 30% 70%, 20% 40%,
+      40% 90%, 90% 90%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    animation: fireworks 3s infinite;
+    border-radius: 50%;
+  }
+  .fireworks2 {
+    top: 50%;
+    left: 50%;
+    animation-delay: 0.5s;
+  }
+  .fireworks3 {
+    top: 20%;
+    left: 80%;
+    animation-delay: 0.75s;
+  }
+  .fireworks4 {
+    top: 70%;
+    left: 30%;
+    animation-delay: 1.75s;
+  }
+  .fireworks5 {
+    top: 40%;
+    left: 70%;
+    animation-delay: 1.25s;
+  }
+  .fireworks6 {
+    top: 60%;
+    left: 40%;
+    animation-delay: 0.5s;
+  }
+  .fireworks7 {
+    top: 40%;
+    left: 10%;
+    animation-delay: 0.75s;
+  }
+  .fireworks8 {
+    top: 50%;
+    left: 90%;
+    animation-delay: 1.75s;
+  }
+  .fireworks9 {
+    top: 30%;
+    left: 60%;
+    animation-delay: 1.25s;
+  }
+  .fireworks10 {
+    top: 10%;
+    left: 30%;
+    animation-delay: 1.25s;
+  }
+
+.txt{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text {
+    color: rgb(255, 255, 255);
+	font-family: poppins;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1;
+	margin: 0;
+    position: relative;
+    top: 100px;
+    text-shadow: 0 0 30px white;
+}
+
+span {
+	font-family: poppins;
+	font-weight: 800;
+	font-size: 37px;
+	line-height: 1;
+	margin: 0;
+	position: relative;
+	color: #ffcc00;
+	
+	animation: flicker 3s linear infinite;
+	z-index: 2;
+    top: 61px;
+    right: 52px;
+}
+
+@keyframes flicker {
+	0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100% {
+		opacity: 0.99;
+		text-shadow: 
+			-1px -1px 0 rgba(255,255,255, 0.4), 
+			1px -1px 0 rgba(255,255,255, 0.4), 
+			-1px 1px 0 rgba(255,255,255, 0.4), 
+			1px 1px 0 rgba(255,255,255, 0.4), 
+			0 -2px 8px, 
+			0 0 2px, 
+			0 0 5px #ff7e00, 
+			0 0 15px #ff4444, 
+			0 0 2px #ff7e00, 
+			0 2px 3px #000;
+	}
+	20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+		opacity: 0.4;
+		text-shadow: none;
+	}
+}
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.btntext {
+  position: absolute;
+  top: 250px;
+  background-color: #ffffff;
+  font-family: poppins;
+  font-weight: 500;
+  font-size: 15px;
+  width: 190px;
+  height: 32px;
+  border-radius: 40px;
+  box-shadow: 0 0 20px white;
+  animation: transIn 2s;
+    color: #000000;
+    font-family: poppins;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.popup{
+  
+    width: 100%;
+    height: 100%;
+    background : #ffffff;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    text-align: center;
+    padding: 0 20px 30px;
+    color: #000000;
+    opacity: 0;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 5;
+}
+.open-popup{
+  transition: opacity ;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+}
+.ctd{
+    position: relative;
+    top: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.timer{
+    width: 220px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.sub_timer{
+    width: 64px;
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.digit{
+  margin-top: 10px;
+    color: #fff;
+    font-weight: lighter;
+    font-size: 26px;
+    font-family: poppins;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.1rem 1rem;
+}
+.digit_name{
+  margin-top: 2px;
+    color: #000;
+    background: #fff;
+    text-align: center;
+    font-family: poppins;
+    font-weight: 500;
+    padding: 0 0;
+    font-size: 10px;
+}
+
+@keyframes flowtxt {
+    0% {
+        transform:translate(0px, 0px);
+    }
+    50%{
+        transform:translate(0px, -20px);
+    }
+    100% {
+        transform:translate(0px, 0px);
+    }
+  }
+
+.text1, 
+.text2 {
+	width: 100%;
+	display: inline-block;
+	
+	font-family: 'Raleway', sans-serif;
+	font-size: 40px;
+	
+	
+	user-select: none;
+
+    filter: url(#threshold) blur(0.6px);
+
+}
+@keyframes transIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+@keyframes transInbutt {
+    0% {
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  .boxx{
+    top: 70px;
+    opacity: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: transInbutt 2s forwards;
+    animation-delay: 8s; 
+}
+  .buttoncon{
+    opacity: 0;
+    position: relative;
+    top: 280px;
+    background-color: #ffffff;
+    font-weight: 500;
+    font-size: 15px;
+    width: 140px;
+    height: 32px;
+    border-radius: 40px;
+    box-shadow: 0 0 20px white;
+    animation: transInbutt 2s forwards;
+    animation-delay: 8s;    
+}
+.btntextcon,
+.a{
+  opacity: 0;
+    position: relative;
+    top: 4px;
+    color: #000000;
+    font-family: poppins;
+    font-weight: 500;
+    font-size: 15px;
+    animation: transInbutt 2s forwards;
+    animation-delay: 8s; 
+}
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+}
+.loader{
+  scale: 50%;
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 25px;
+    top: -150px;
+    bottom: 150px;
+}
+.loader div:nth-child(1){
+    background-color: #dd1c4b;
+    height: 200px;
+    width: 125px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    right: 0;
+    transform: rotate(45deg);
+    border-radius: 100px 100px 10px 10px;
+    transform-origin: 50% 69%;
+    animation: flip1 4s linear infinite;
+}
+
+@keyframes flip1{
+    25%{
+        transform: rotate(45deg) rotateX(180deg);
+    }
+    50%{
+        transform: rotate(45deg) rotateX(180deg);
+    }
+    75%{
+        transform: rotate(45deg);
+    }
+}
+
+.loader div:nth-child(2){
+    height: 200px;
+    width: 125px;
+    background-color: #dd1c4b;
+    position: absolute;
+    top: 151px;
+    left: 132px;
+    transform: rotate(135deg);
+    transform-origin: 50% 31%;
+    border-radius: 10px 10px 100px 100px;
+    animation: flip2 4s 1s linear infinite;
+}
+
+@keyframes flip2{
+    25%{
+        transform: rotate(135deg) rotateX(180deg);
+    }
+    50%{
+        transform: rotate(135deg) rotateX(180deg);
+    }
+    75%{
+        transform: rotate(135deg);
+    }
+}
