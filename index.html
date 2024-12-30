@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy New Year</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/jpg" href="image/emojis.jpg"  >
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
@@ -63,7 +64,7 @@
     </div>
     <div class="pengisi"></div>
     <div class="game-container">
-        <h1>Guess The Number!!</h1>
+        <h1>Guess The Password!!</h1>
         <p>Insert between 1-100</p>
         
         <label for="guess" style="display: none;">Masukkan Tebakan:</label>
@@ -85,7 +86,7 @@
     function openPopup(){
     popup.classList.add("open-popup");
 }
-        var target_mili_sec = new Date("Dec 30, 2024 23:00:00");
+        var target_mili_sec = new Date("Dec 31, 2024 23:59:59");
         var endTime = target_mili_sec.getTime();
         function timer() {
          var today = new Date();
@@ -122,7 +123,7 @@
             document.getElementById('btn').innerHTML = "Please Wait";
         }
         else{
-            var target_mili_sec = new Date("Dec 30, 2024 23:00:00");
+            var target_mili_sec = new Date("Dec 31, 2024 23:59:59");
         function timerBTN() {
             var now_mili_secBTN = new Date().getTime();
             var remaining_secBTN = Math.floor( (target_mili_sec - now_mili_secBTN) / 1000 );
