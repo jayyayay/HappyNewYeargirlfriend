@@ -86,7 +86,7 @@
     function openPopup(){
     popup.classList.add("open-popup");
 }
-        var target_mili_sec = new Date("Dec 31, 2024 23:59:59");
+        var target_mili_sec = new Date("Dec 31, 2024 20:13:00");
         var endTime = target_mili_sec.getTime();
         function timer() {
          var today = new Date();
@@ -116,14 +116,15 @@
 	text2: document.getElementById("text2")
 };
         var now_mili_secBTNM = new Date().getTime();
-        var remaining_secBTNM = Math.floor( (target_mili_sec - now_mili_secBTNM) / 1000 );      
+        var remaining_secBTNM = Math.floor( (targ3-et_mili_sec - now_mili_secBTNM) / 1000 ); 
+        var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);     
         var min = Math.floor((remaining_secBTNM % 3600) / 60);
 
-        if(min >= 1){
+        if(min >= 1 && hour >= 1){
             document.getElementById('btn').innerHTML = "Please Wait";
         }
         else{
-            var target_mili_sec = new Date("Dec 31, 2024 23:59:59");
+            var target_mili_sec = new Date("Dec 31, 2024 20:13:00");
         function timerBTN() {
             var now_mili_secBTN = new Date().getTime();
             var remaining_secBTN = Math.floor( (target_mili_sec - now_mili_secBTN) / 1000 );
@@ -203,3 +204,4 @@ restartBtn.addEventListener('click', restartGame);
     </script>
   </body>
 </html>
+5
